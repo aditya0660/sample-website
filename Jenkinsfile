@@ -2,17 +2,14 @@ pipeline {
     agent any
 
     environment {
-        SERVER_IP = "192.168.1.100"
-        USERNAME = "my_username"
-        PASSWORD = "my_password"
-        WEB_SERVER = "172.30.31.129"
+        WEB_SERVER = "172.30.17.13"
         WEB_USER = 'jenkins'
         WEB_PATH = '/var/www/html'
     }
     stages {
         stage('cloning') {
             steps {
-                git branch: 'main', credentialsId: '1', url: 'https://github.com/aditya0660/sample-website.git'
+                git branch: 'main', url: 'https://github.com/aditya0660/sample-website.git'
             }
         }
         stage('deploying') {
