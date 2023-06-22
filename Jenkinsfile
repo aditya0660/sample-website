@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        WEB-SERVER = '172.30.31.129'
+        WEB-SERVER = 172.30.31.129
         WEB-USER = 'jenkins'
         WEB-PATH = '/var/www/html'
     }
