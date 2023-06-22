@@ -15,10 +15,15 @@ pipeline {
                 git branch: 'main', credentialsId: '1', url: 'https://github.com/aditya0660/sample-website.git'
             }
         }
-        stage('Deploying') {
+        stage('cleaning') {
             steps {
-            sh 'ssh ${WEB_USER}@${WEB_SERVER}', sh 'sudo rm -rf ${WEB_PATH}/*' 
-            sh 'sudo scp -r ${WORKSPACE}/* ${WEB_USER}@${WEB_SERVER}:${WEB_PATH}}'
+                sh ' ssh ${WEB_USER}@${WEB_SERVER} '
+                sh ' sudo rm -rf ${WEB_PATH}/* ' 
+            }
+        }
+        stage('deploying') {
+            steps {
+                sh ' sudo scp -r ${WORKSPACE}/* ${WEB_USER}@${WEB_SERVER}:${WEB_PATH}} '
             }
         }
     }
