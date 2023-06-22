@@ -2,11 +2,13 @@ pipeline {
     agent any
 
     environment {
-        WEB-SERVER = 172.30.31.129
+        SERVER_IP = "192.168.1.100"
+        USERNAME = "my_username"
+        PASSWORD = "my_password"
+        WEB-SERVER = "172.30.31.129"
         WEB-USER = 'jenkins'
         WEB-PATH = '/var/www/html'
     }
-
     stages {
         stage('cloning') {
             steps {
