@@ -5,9 +5,9 @@ pipeline {
         SERVER_IP = "192.168.1.100"
         USERNAME = "my_username"
         PASSWORD = "my_password"
-        WEB-SERVER = "172.30.31.129"
-        WEB-USER = 'jenkins'
-        WEB-PATH = '/var/www/html'
+        WEB_SERVER = "172.30.31.129"
+        WEB_USER = 'jenkins'
+        WEB_PATH = '/var/www/html'
     }
     stages {
         stage('cloning') {
@@ -17,8 +17,8 @@ pipeline {
         }
         stage('Deploying') {
             steps {
-                sh 'ssh ${WEB-USER}@${WEB-SERVER}', sh 'sudo rm -rf ${WEB-PATH}/*' 
-                sh 'sudo scp -r ${WORKSPACE}/* ${WEB-USER}@${WEB-SERVER}:${WEB-PATH}}'
+                sh 'ssh ${WEB_USER}@${WEB_SERVER}', sh 'sudo rm -rf ${WEB_PATH}/*' 
+                sh 'sudo scp -r ${WORKSPACE}/* ${WEB_USER}@${WEB_SERVER}:${WEB_PATH}}'
             }
         }
     }
