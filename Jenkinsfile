@@ -17,7 +17,8 @@ pipeline {
         }
         stage('cleaning') {
             steps {
-                sh ' ssh ${WEB_USER}@${WEB_SERVER} ', sh ' sudo rm -rf ${WEB_PATH}/* ' 
+                sh ' ssh ${WEB_USER}@${WEB_SERVER} '
+                sh ' ssh ${WEB_USER}@${WEB_SERVER}:sudo rm -rf ${WEB_PATH}/* ' 
             }
         }
         stage('deploying') {
