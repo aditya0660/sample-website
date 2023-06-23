@@ -14,7 +14,8 @@ pipeline {
         }
         stage('deploying') {
             steps {
-                sh ' sudo scp -r ${WORKSPACE}/* ${WEB_USER}@${WEB_SERVER}:${WEB_PATH}} '
+                //sh ' sudo scp -r ${WORKSPACE}/* ${WEB_USER}@${WEB_SERVER}:${WEB_PATH}} '
+               sh ' scp -r /var/lib/jenkins/workspace/pipe/* root@172.30.17.13:/var/www/html/" 
             }
         }
     }
