@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         WEB_SERVER = "172.30.17.13"
-        WEB_USER = 'jenkins'
+        WEB_USER = 'root'
         WEB_PATH = '/var/www/html'
     }
     stages {
